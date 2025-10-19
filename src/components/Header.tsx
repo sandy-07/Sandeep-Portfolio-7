@@ -24,8 +24,9 @@ const Header = () => {
 
   const navItems = [
     { id: "about", label: "About Me" },
-    { id: "projects", label: "Projects" },
-    { id: "skills", label: "Skills" },
+    { id: "skills", label: "Skills & Tools" },
+    { id: "projects", label: "Personal Projects" },
+    { id: "certifications", label: "Training & Certifications" },
     { id: "connect", label: "Let's Connect" },
   ];
 
@@ -36,7 +37,9 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <h1 className="text-2xl font-bold gradient-text">ST</h1>
+        <button onClick={() => scrollToSection("hero")} className="text-2xl font-bold text-foreground hover:text-primary transition-colors">
+          Sandeep Thummala
+        </button>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">

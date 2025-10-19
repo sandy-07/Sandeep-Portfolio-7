@@ -31,7 +31,7 @@ const Connect = () => {
   ];
 
   return (
-    <section id="connect" className="py-20 px-4">
+    <section id="connect" className="py-20 px-4 bg-secondary/20 scroll-mt-20">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">

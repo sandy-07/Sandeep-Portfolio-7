@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/20" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(45,93,158,0.1),transparent_50%)]" />
@@ -89,12 +89,14 @@ const Hero = () => {
         {/* Profile Image */}
         <div className="flex justify-center md:justify-end">
           <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
-            <img
-              src={profileImage}
-              alt="Sandeep Thummala"
-              className="relative rounded-2xl w-full max-w-md shadow-2xl border-2 border-primary/20 group-hover:border-primary/40 transition-all duration-300"
-            />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+            <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden bg-gradient-to-br from-amber-100 to-amber-200 p-2 shadow-2xl border-4 border-primary/20 group-hover:border-primary/40 transition-all duration-300">
+              <img
+                src={profileImage}
+                alt="Sandeep Thummala"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
           </div>
         </div>
       </div>

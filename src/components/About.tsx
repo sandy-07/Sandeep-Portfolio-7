@@ -1,4 +1,4 @@
-import { GraduationCap, Award } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 
 const About = () => {
@@ -23,23 +23,8 @@ const About = () => {
     },
   ];
 
-  const certifications = [
-    {
-      title: "Amazon AWS re/Start Program",
-      description:
-        "Completed the AWS re/Start program with hands-on labs in cloud computing, Linux, Networking and core AWS services. Gained the AWS Cloud Practitioner certification.",
-      organization: "Training Partner: Tech Mahindra SMART Academy",
-    },
-    {
-      title: "Oracle Cloud Infrastructure (OCI) Associate",
-      description:
-        "Demonstrated expertise in OCI core services like networking, storage, compute, and security. Skilled in designing scalable, secure, and cost-optimized cloud architectures.",
-      organization: "Oracle",
-    },
-  ];
-
   return (
-    <section id="about" className="py-20 px-4 bg-secondary/20">
+    <section id="about" className="py-20 px-4 bg-secondary/20 scroll-mt-20">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -50,55 +35,8 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {/* Education */}
-          <div>
-            <div className="flex items-center gap-2 mb-6">
-              <GraduationCap className="text-primary" size={32} />
-              <h3 className="text-2xl font-bold">Education</h3>
-            </div>
-            <div className="space-y-4">
-              {education.map((edu, index) => (
-                <Card key={index} className="hover-glow transition-all duration-300">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{edu.institution}</CardTitle>
-                    <CardDescription>{edu.degree}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">{edu.period}</span>
-                      <span className="text-primary font-semibold">{edu.grade}</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Certifications */}
-          <div>
-            <div className="flex items-center gap-2 mb-6">
-              <Award className="text-primary" size={32} />
-              <h3 className="text-2xl font-bold">Training & Certifications</h3>
-            </div>
-            <div className="space-y-4">
-              {certifications.map((cert, index) => (
-                <Card key={index} className="hover-glow transition-all duration-300">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{cert.title}</CardTitle>
-                    <CardDescription className="text-xs">{cert.organization}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{cert.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-
         {/* Career Objective */}
-        <Card className="bg-gradient-to-br from-card to-secondary/30 border-primary/20 hover-glow transition-all duration-300">
+        <Card className="bg-gradient-to-br from-card to-secondary/30 border-primary/20 hover-glow transition-all duration-300 mb-12">
           <CardHeader>
             <CardTitle className="text-2xl">Career Objective</CardTitle>
           </CardHeader>
@@ -110,6 +48,29 @@ const About = () => {
             </p>
           </CardContent>
         </Card>
+        {/* Education */}
+        <div>
+          <div className="flex items-center gap-2 mb-6">
+            <GraduationCap className="text-primary" size={32} />
+            <h3 className="text-2xl font-bold">Education</h3>
+          </div>
+          <div className="space-y-4">
+            {education.map((edu, index) => (
+              <Card key={index} className="hover-glow transition-all duration-300">
+                <CardHeader>
+                  <CardTitle className="text-lg">{edu.institution}</CardTitle>
+                  <CardDescription>{edu.degree}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">{edu.period}</span>
+                    <span className="text-primary font-semibold">{edu.grade}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
